@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mi primera Web Solo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+  </header>
+  <section>
+    <form action="" class="form-register">
+      <h2>Bienvenido</h2>
+      <label for="nombre">Nombre</label><br>
+      <input type="text" placeholder="escribe tu nombre" id="nombre" class="control"><br>
+      <label for="apellido">apellido</label>
+      <input type="text" placeholder="apellido" name="apellido" id="apellido" class="control">
+      <br>
+      <label for="correo">Correo electronico: </label><br>
+      <input type="email" placeholder="Correo electronico" name="correo" id="correo" class="control">
+      <br>
+      <label for="contrasena">Contraseña: </label><br>
+      <input type="password" placeholder="Escribir contraseña" name="contrasena" id="contrasena" class="control">
+      <!--<img src="img/ojo.jpg" alt="" width="35">-->
+      <br>
+      
+      <p>Acepto los <a href="#"> terminos y condiciones</a><input type="checkbox"></p> 
+      <input type="submit" value="registrarse" class="boton"><br>
+      <P><a class="cuenta" href="/">¿Ya tengo cuenta?</a></P>
+
+    </form>
+  </section>
+</body>
+</html>
