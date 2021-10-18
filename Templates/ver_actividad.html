@@ -11,23 +11,22 @@
   <!-- Font Scheherazade -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <!--nuestro css-->
-  <link rel="stylesheet" href="css/style4.css">
+  <link rel="stylesheet" href="/static/css/style4.css">
 </head>
 
+
+<!--video src="/static/Vallenato.mpeg" controls width="200" height="20"></video>-->
 <body>
-  <div class="container">+
+  <div class="container">
     <nav class="nav-main">
-      <img src="img/notas.png" alt="TechNews logo" class="nav-brand">
+      <img src="{{ url_for('static', filename='/img/notas.png') }}" alt="TechNews logo" class="nav-brand">
       <ul class="nav-menu">
         <li>
-          <a href="#">Inicio</a>
+          <a href="/dashboard">Inicio</a>
         </li>
-        <li>
-          <a href="#">Detalles de actividad</a>
-        </li>
-        <li>
-          <a href="#">Crear actividad</a>
-        </li>
+        <!--<li>
+          <a href="/">Crear actividad</a>
+        </li>-->
       </ul>
       <ul class="nav-menu-right">
         <!-- Aqui vamos a crear el icono-->
@@ -44,15 +43,28 @@
     <hr>
   </div>
   <div class="btn-group" role="group" aria-label="Basic example">
+    <h1>
+      {{ data.0 }}
+    </h1>
     <button type="button" class="btn btn-primary">Left</button>
     <button type="button" class="btn btn-primary">Middle</button>
     <button type="button" class="btn btn-primary">Right</button><br>
     <textarea name="Descripcion" id="Descripcion" cols="44" rows="10" placeholder="Describe la Actividad"></textarea>
     <br>
     <label for="fecha">fecha de entrega</label>
-    <input type="date"><br>
+    <input type="date" value="{{data.1}}" disabled><br>
     <label for="subir">Adjuntar Archivo</label>
-    <input type="file">
+    <input type="file" name="Upload_F">
+
+    
+  </div>
+  <div>
+    <p>Aqui me encuentro</p>
+    {% if data.2==" " %}
+    <img src="{{ url_for('static', filename='img/' + data.4) }}" alt="">
+    {% else %}
+    <video src="/static{{ (data.2) }}" controls></video>
+    {% endif %}
   </div>
 </body>
 
